@@ -1,0 +1,70 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 270, 6%, 7%;              
+    --foreground: 0 0% 98%;                
+  
+    --card: 270, 4%, 10%;                  
+    --card-foreground: 0 0% 98%;
+  
+    --border: 0 0% 12%;                     
+    --input: 0 0% 12%;
+  
+    --primary: 0 0% 98%;                   
+    --primary-foreground: 0 0% 0%;         
+  
+    --secondary: 0 0% 12%;                 
+    --secondary-foreground: 0 0% 98%;      
+  
+    --accent: 265, 100%, 70%;              
+    --accent-foreground: 0 0% 100%;        
+  
+    --ring: 0 0% 24%;    
+  }
+  
+
+  body {
+    @apply bg-background text-foreground overflow-hidden;
+    @apply font-sans bg-background text-foreground overflow-hidden;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-secondary rounded-full;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-black/30 backdrop-blur-sm border border-white/10;
+  }
+}
+
+[data-tauri-drag-region] {
+  -webkit-app-region: drag;
+}
+
+button,
+[role="button"],
+a,
+input,
+select,
+textarea {
+  -webkit-app-region: no-drag;
+}
+
+html {
+  @apply scroll-smooth;
+}
+
